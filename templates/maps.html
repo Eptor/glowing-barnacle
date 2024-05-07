@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block imports %}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD86B4Sto6BOfttjpzMFQjDwQQSMCQbirQ"></script>
+{% endblock %}
+
+{% block content %}
+    <style>
+        #map {
+            height: 650px;
+            width: 100%;
+        }
+    </style>
+    <div id="map"></div>
+    <script>
+        function initMap() { 
+            var myLatLng = {lat: 32.64328613502088, lng: -115.46680023585391}; // Coordenadas de ejemplo
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 8,
+                center: myLatLng
+            });
+
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Hello World!'
+            });
+
+            var marker1 = new google.maps.Marker({
+                position: {lat: 32.64340175205225, lng: -115.46695512910793}, // Nuevas coordenadas
+                map: map,
+                title: 'Marker 1'
+            });
+
+            var marker2 = new google.maps.Marker({
+                position: {lat: 32.643490266646374, lng: -115.46700000027194}, // Nuevas coordenadas
+                map: map,
+                title: 'Marker 2'
+            });
+
+            var marker3 = new google.maps.Marker({
+                position: {lat: 32.64346455958003, lng: -115.46677073155485}, // Nuevas coordenadas
+                map: map,
+                title: 'Marker 3'
+            });
+
+            var marker4 = new google.maps.Marker({
+                position: {lat: 32.64335389122451, lng: -115.46672111068823}, // Nuevas coordenadas
+                map: map,
+                title: 'Marker 4'
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD86B4Sto6BOfttjpzMFQjDwQQSMCQbirQ&callback=initMap"></script>
+{% endblock %}

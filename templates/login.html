@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="flex justify-center items-center h-screen" style="display: flex; justify-content: center;">
-  <form class="max-w-md bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+  <form class="max-w-md bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="{{ url_for('login') }}" method="post">
     <div class="mb-6 text-center">
       <h2 class="text-xl font-semibold mb-4">Inicio de sesión</h2>
       <p class="text-sm text-gray-600">Ingresa con tu cuenta para acceder a nuestros servicios.</p>

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="flex justify-center items-center h-screen" style="display: flex; justify-content: center;">
+  <form class="max-w-md bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="{{ url_for('upload_experience') }}"
+    method="post" enctype="multipart/form-data">
+    <div class="mb-6 text-center">
+      <h2 class="text-xl font-semibold mb-4">Subir Experiencia</h2>
+      <p class="text-sm text-gray-600">Llena el formulario y sube el archivo GLTF de la experiencia.</p>
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="experience_name">Nombre de la Experiencia</label>
+      <input
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        name="experience_name" id="experience_name" type="text" placeholder="Nombre de la experiencia">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="gltf_file">Archivo GLTF</label>
+      <input
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        name="gltf_file" id="gltf_file" type="file" accept=".gltf">
+    </div>
+    <div class="flex items-center justify-center">
+      <button class="bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        type="submit" style="margin-left: 100px; margin-top: 10px;">Subir Experiencia</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
